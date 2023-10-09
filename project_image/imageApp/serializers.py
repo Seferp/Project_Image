@@ -2,18 +2,7 @@ from .models import UploadImage
 from rest_framework import serializers
 from PIL import Image
 from io import BytesIO
-from django.core.files.base import ContentFile
-from django.conf import settings
-import os
-from django.core.files import File
-from django.core.files.storage import default_storage
-
-
-from django.shortcuts import get_object_or_404
-from django.http import JsonResponse
-from shutil import copyfile
 from django.core.files.uploadedfile import InMemoryUploadedFile
-from django.conf import settings
 
 
 

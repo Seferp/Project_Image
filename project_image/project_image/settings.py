@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'imageApp',
     'rest_framework',
+    'django_resized',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "/media/"
+
+# LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/images/'
+# LOGOUT_URL = '/logout/'
+LOGOUT_REDIRECT_URL = '/images/'

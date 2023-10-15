@@ -7,8 +7,6 @@ from rest_framework.response import Response
 from django.utils import timezone
 from django.http import HttpResponse, FileResponse
 from datetime import timedelta
-
-
 # Create your views here.
 
 
@@ -68,10 +66,6 @@ class DownloadImageView(generics.RetrieveAPIView):
         expiration_date = instance.added_date + timedelta(seconds=instance.expired_time)
         if expiration_date and expiration_date < timezone.now():
             return HttpResponse(status=400)
-
-        print(f"Stara data {instance.added_date}")
-        print(f"Nowa data {expiration_date}")
-
 
         response = FileResponse(instance.image, content_type="image/jpeg")
         response['Content-Disposition'] = f'attachment; filename="{instance.image.name}"'

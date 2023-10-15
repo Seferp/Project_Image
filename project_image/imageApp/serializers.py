@@ -4,7 +4,6 @@ from PIL import Image
 from io import BytesIO
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.urls import reverse
-from datetime import datetime
 
 
 class UploadImageBasicSerializer(serializers.ModelSerializer):

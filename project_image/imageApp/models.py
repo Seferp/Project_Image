@@ -4,7 +4,6 @@ from PIL import Image
 from django.urls import reverse
 from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
-from datetime import timedelta
 
 # Create your models here.
 
@@ -40,13 +39,11 @@ class UploadImage(models.Model):
     def get_expired_time(self):
         return self.expired_time
 
+
 @receiver(post_save, sender=UploadImage)
 def generate_expired_link(sender, instance, **kwargs):
 
     if instance.image and not instance.expired_link:
-        # if instance.expiration_date < timezone.now():
-        #     return HttpResponse(status=400)
         download_url = reverse('download_image', kwargs={'pk': instance.pk})
         instance.expired_link = f"http://127.0.0.1:8000{download_url}"
         instance.save()
-

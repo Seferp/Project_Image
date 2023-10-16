@@ -28,7 +28,7 @@
     - performance considerations (assume there can be a lot of images and the API is frequently accessed)
 
 
-As instructed, I created the necessary user accounts in the admin panel
+As instructed, I created the necessary user accounts in the admin panel.
 
 # Basic user
 Basic user can add image by POST method. 
@@ -49,6 +49,12 @@ The time after which the link expires is given by enterprise user when sending t
 ![image](https://github.com/Seferp/Project_Image/assets/111074557/686549b9-2b68-45a3-8717-b0e2d8623a21)
 ![image](https://github.com/Seferp/Project_Image/assets/111074557/1d00ea73-7f33-4617-8caf-a443eab906b5)
 
-
-
+## How To Set Up Locally
+- clone the repo
+- create super user account in terminal
+- visit http://127.0.0.1:8000/admin/ and login with you username and password
+- create account tier which you need
+- visit http://127.0.0.1:8000/login/ and login with username and password for your new acount
+- now you can uploud image
+If you need switch between two or more accounts, you can use logout URL: http://127.0.0.1:8000/logout/ - automatically logout from current account
 

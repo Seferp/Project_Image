@@ -7,6 +7,7 @@ from rest_framework.response import Response
 from django.utils import timezone
 from django.http import HttpResponse, FileResponse
 from datetime import timedelta
+
 # Create your views here.
 
 
@@ -49,7 +50,7 @@ class UploadImageList(generics.ListCreateAPIView):
 
             for item in data:
                 del item['expired_time']
-                # del item['added_date']
+                del item['added_date']
 
             return Response(serializer.data)
 
